@@ -1,0 +1,2 @@
+---
+BUNDLE_BUILD__SASS: "--with-cflags=-Wno-error=implicit-function-declaration"

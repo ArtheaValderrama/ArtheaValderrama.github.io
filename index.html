@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Times New Roman', serif;
+    }
+
+    body {
+      background: #fafafa; /* softer white */
+      color: #111;
+      line-height: 1.7;
+      scroll-behavior: smooth;
+      overscroll-behavior: none;
+    }
+
+    /* --- BOLD + MODERN (Squarespace Sofia-inspired) --- */
+
+    header {
+      width: 100%;
+      padding: 40px 80px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: transparent;
+    }
+
+    header h1 {
+      font-size: 42px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    nav a {
+      color: black;
+      margin-left: 45px;
+      text-decoration: none;
+      font-size: 20px;
+      padding-bottom: 6px;
+      border-bottom: 3px solid transparent;
+      transition: 0.3s ease;
+      letter-spacing: 0.2px;
+    }
+
+    nav a:hover {
+      border-bottom: 3px solid black;
+    }
+
+    /* HERO — strong type, large spacing */
+    .hero {
+      padding: 220px 40px 180px;
+      text-align: center;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .hero h2 {
+      font-size: 88px;
+      font-weight: 700;
+      line-height: 1.05;
+      margin-bottom: 35px;
+      letter-spacing: -1px;
+    }
+
+    .hero p {
+      font-size: 26px;
+      max-width: 760px;
+      margin: auto;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    section {
+      padding: 140px 40px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section-title {
+      font-size: 52px;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 70px;
+      letter-spacing: 0.3px;
+    }
+
+    /* Modern Cards */
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 55px;
+    }
+
+    .project-card {
+      background: #ffffff;
+      border: 1px solid #e5e5e5;
+      border-radius: 12px;
+      padding: 40px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 14px 36px rgba(0,0,0,0.12);
+    }
+
+    .project-card h3 {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .project-card p {
+      font-size: 18px;
+      color: #444;
+      margin-bottom: 18px;
+    }
+
+    /* Badges — modern pill style */
+    .badge {
+      display: inline-block;
+      background: #f4f4f4;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 14px;
+      letter-spacing: 0.3px;
+      text-transform: uppercase;
+    }
+    .icon {
+      width: 22px;
+      height: 22px;
+      object-fit: contain;
+      display: inline-block;
+    }
+    footer {
+      background: #fafafa;
+      padding: 60px;
+      text-align: center;
+      color: #444;
+      margin-top: 120px;
+      font-size: 18px;
+      border-top: 1px solid #eee;
+    }
+
+    a.github-link {
+      color: #000;
+      text-decoration: underline;
+      font-size: 17px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+  /* GIF preview styling */
+    .project-gif {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+  /* Fade-in animation — smoother + slower for Sofia look */
+    .fade-section {
+      opacity: 0;
+      transform: translateY(55px);
+      transition: opacity 1.4s ease, transform 1.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+    }
+    .visible {
+      opacity: 1 !important;
+      transform: translateY(0) !important;
+    } { opacity: 1 !important; transform: translateY(0) !important; }
+
+    /* Editorial spacing + baseline grid (Sofia-inspired) */
+    h1 { font-size: 64px; font-weight: 700; line-height: 1.05; }
+    h2 { font-size: 48px; font-weight: 700; line-height: 1.1; }
+    h3 { font-size: 28px; font-weight: 700; line-height: 1.3; }
+    p { font-size: 20px; line-height: 1.7; }
+    section {
+      padding: 200px 70px;
+    } { padding: 180px 60px; }
+
+    /* Icon styling */
+    .icon { width: 26px; height: 26px; margin-left: 18px; transition: opacity 0.3s ease; }
+    .icon:hover { opacity: 0.6; }
+
+    /* Floating footer links */
+    .floating-footer-links {
+      position: fixed;
+      bottom: 22px;
+      right: 24px;
+      display: flex;
+      gap: 20px;
+      z-index: 999;
+    }
+</style>
+</head>
+<body>
+  <header class="fade-section">
+    <h1>Your Name</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div style="display:flex; align-items:center;">
+      <a href="https://github.com/Avalderrama04" target="_blank">
+      <img src="github-mark.png" class="icon" alt="GitHub">
+      </a>
+      </a>
+      <a href="https://www.linkedin.com/in/arthea-valderrama" target="_blank">
+      <img src="LI-In-Bug.png" class="icon" alt="LinkedIn">
+      </a>
+    </div>
+  </header>
+
+  <div class="hero fade-section" style="display:flex; align-items:center; justify-content:space-between; padding:0 80px; background:white; color:#111; min-height:90vh;">
+  <div style="flex:1; padding-right:40px;">
+    <h2 style="font-size:64px; font-weight:700; margin-bottom:20px;">Hi, I'm Your Name</h2>
+    <p style="font-size:20px; margin-bottom:30px; max-width:500px;">I build modern, scalable, and human-centered digital experiences.</p>
+    <div style="display:flex; gap:20px;">
+      <a href="resume.pdf" target="_blank" style="font-size:18px; text-decoration:underline; color:#111;">Resume</a>
+      <a href="cv.pdf" target="_blank" style="font-size:18px; text-decoration:underline; color:#111;">CV</a>
+      <a href="https://linkedin.com" target="_blank" style="font-size:18px; text-decoration:underline; color:#111;">LinkedIn</a>
+    </div>
+  </div>
+  <div style="flex:1; display:flex; justify-content:center; align-items:center;">
+    <div style="width:360px; height:460px; background:#eaeaea; border-radius:12px; display:flex; justify-content:center; align-items:center; font-size:20px; color:#555;">Headshot Placeholder</div>
+  </div>
+</div>
+
+  <section id="about" class="fade-section">
+    <h2 class="section-title">About Me</h2>
+    <p>
+      I am a software developer with expertise in frontend, backend, and AI-driven solutions. I love building clean interfaces and solving complex problems through code.
+    </p>
+  </section>
+
+  <section id="experience" class="fade-section">
+    <h2 class="section-title">Experience</h2>
+    <div class="projects">
+      <div class="project-card">
+        <h3>Role / Company</h3>
+        <p>Describe your responsibilities, outcomes, leadership, and accomplishments.</p>
+      </div>
+      <div class="project-card">
+        <h3>Role / Company</h3>
+        <p>Highlight measurable results and impactful contributions.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="fade-section">
+    <h2 class="section-title">Skills</h2>
+    <div class="projects">
+      <div class="project-card"><h3>Frontend</h3><p>HTML, CSS, JavaScript, React, UI/UX</p></div>
+      <div class="project-card"><h3>Backend</h3><p>Node.js, Python, Databases, APIs</p></div>
+      <div class="project-card"><h3>AI / Tools</h3><p>Machine Learning, Prompt Engineering, Automation</p></div>
+    </div>
+  </section>
+
+  <section id="publications" class="fade-section">
+    <h2 class="section-title">Publications & Abstracts</h2>
+    <div class="projects">
+      <div class="project-card">
+        <h3>Title of Publication</h3>
+        <span style="display:inline-block; background:#eee; padding:5px 10px; border-radius:8px; margin-bottom:10px; font-size:12px;">Paper</span>
+        <p>Brief description of the research, contribution, or abstract summary.</p>
+      </div>
+      <div class="project-card">
+        <h3>Title of Abstract</h3>
+        <span style="display:inline-block; background:#eee; padding:5px 10px; border-radius:8px; margin-bottom:10px; font-size:12px;">Conference Talk</span>
+        <p>Short explanation of the topic, findings, relevance, or presentation details.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="fade-section">
+    <h2 class="section-title">Projects</h2>
+    <div class="projects">
+      <div class="project-card">
+        <img class="project-gif" data-still="pimages/sokobancapture.png" data-gif="pimages/Sokoban.gif" alt="Project 1 Preview" />
+        <h3>Sokoban</h3>
+        <p>A tile-based video game in which the player controls a worker to push boxes into their designated target locations.</p>
+        <a href="https://github.com/Avalderrama04/Sokoban/tree/master" target="_blank" style="color:#000; text-decoration:underline;">View on GitHub</a></h3>
+      </div>
+      <div class="project-card">
+        <img class="project-gif" data-still="project2-still.png" data-gif="project2.gif" alt="Project 2 Preview" />
+        <h3>Adversarial & Anomalous Detection of MRI Images</h3>
+        <p>Exploring the mechanisms behind image perturbation attacks on CNNs, this project aims to contribute to the development of safer ML models by evaluating the effectiveness of algorithms (C&W and SimBA). Currently utilizes Gemini API for further diagnostic summaries, but additional work is being done to support its own NLP model. </p>
+        <a href="https://github.com/AdversarialTesting" target="_blank" style="color:#000; text-decoration:underline;">View on GitHub</a></h3>
+      </div>
+      <div class="project-card">
+        <img class="project-gif" data-still="project3-still.png" data-gif="project3.gif" alt="Project 3 Preview" />
+        <h3>Project Three</h3>
+        <p>Another project summary. Highlight results, improvements, or user impact.</p>
+        <a href="https://github.com/yourrepo3" target="_blank" style="color:#000; text-decoration:underline;">View on GitHub</a></h3>
+        <p>Another project summary. Highlight results, improvements, or user impact.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="fade-section">
+    <h2 class="section-title">Contact</h2>
+    <p>Email: yourname@example.com</p>
+    <button onclick="alert('Thanks for reaching out!')">Say Hello</button>
+  </section>
+
+  <footer>
+    <p>© 2025 Your Name. All rights reserved.</p>
+  </footer>
+
+  <script>
+  
+    
+    const smoothScroll = () => {
+      const scrollY = window.scrollY;
+      document.body.style.scrollBehavior = 'auto';
+      window.requestAnimationFrame(() => {
+      window.scrollTo({ top: scrollY + 0.2, behavior: 'smooth' });
+      });
+    };
+    // GIF Hover Logic
+    document.querySelectorAll('.project-gif').forEach(img => {
+      const still = img.getAttribute('data-still');
+      const gif = img.getAttribute('data-gif');
+      img.src = still;
+
+      img.addEventListener('mouseover', () => img.src = gif);
+      img.addEventListener('mouseout', () => img.src = still);
+    });
+
+
+    // Fade-in scroll behavior
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll('.fade-section').forEach(sec => observer.observe(sec));
+
+    // GIF Hover Logic or interactions
+    window.addEventListener('scroll', () => {
+      document.querySelectorAll('.project-card').forEach(card => {
+        const rect = card.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 50) {
+          card.style.opacity = 1;
+          card.style.transform = 'translateY(0)';
+        }
+      });
+    });
+  </script>
+  <div class="floating-footer-links">
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </div>
+</body>
+</html>
