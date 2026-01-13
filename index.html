@@ -839,7 +839,7 @@
             <div>
               <h3 style="font-size: 24px; font-weight: 700; margin-bottom: 20px; color: #4a4a4a;">Beyond Code</h3>
               <p style="font-size: 18px; line-height: 1.7; color: #5a5a5a;">
-                Outside of work, I'm passionate about running, golfing, listening to live music, drawing, and trying just about any hobby I can explore. I believe that diverse experiences fuel creativity and innovation in technology.
+                Outside of work, I'm passionate about running, golfing, listening to live music, drawing, and trying just about any hobby I can explore. I look forward to learning and immersing myself in new things everyday!
               </p>
             </div>
             <div style="display: flex; justify-content: center;">
@@ -850,7 +850,7 @@
 
         <!-- Coding Journey Countdown - Now matches other cards -->
         <div class="countdown-card slide-right">
-          <h3 class="countdown-title">Time Since I First Started Coding</h3>
+          <h3 class="countdown-title">Time Since I First Started Coding!</h3>
           <div class="countdown-display">
             <div class="countdown-item">
               <span class="countdown-number" id="years">0</span>
@@ -871,6 +871,10 @@
             <div class="countdown-item">
               <span class="countdown-number" id="minutes">0</span>
               <div class="countdown-label">Minutes</div>
+            </div>
+            <div class="countdown-item">
+              <span class="countdown-number" id="seconds">0</span>
+              <div class="countdown-label">Seconds</div>
             </div>
           </div>
         </div> 
@@ -1172,12 +1176,14 @@
       const days = Math.floor((difference % (1000 * 60 * 60 * 24 * 30.44)) / (1000 * 60 * 60 * 24));
       const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
       const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((difference % (1000 * 60)) / 1000);
       
       document.getElementById('years').textContent = years;
       document.getElementById('months').textContent = months;
       document.getElementById('days').textContent = days;
       document.getElementById('hours').textContent = hours;
       document.getElementById('minutes').textContent = minutes;
+      document.getElementById('seconds').textContent = seconds;
     }
     
     // Update countdown immediately and then every second
